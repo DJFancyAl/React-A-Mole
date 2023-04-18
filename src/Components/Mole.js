@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-function Mole({ setDisplayMole, handleClick }) {
+function Mole({ setDisplayMole, addPoint }) {
 
   useEffect(() => {
     let random = Math.ceil(Math.random()*5000)
@@ -11,7 +11,7 @@ function Mole({ setDisplayMole, handleClick }) {
 
   return (
     <div className='moleContainer'>
-        <img onClick={handleClick} src='./images/mole.png' alt="mole" />
+        <img className="moleImage" onClick={addPoint} src='./images/mole.png' alt="mole" />
     </div>
   )
 }

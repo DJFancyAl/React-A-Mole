@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 
-function EmptySlot({ setDisplayMole }) {
+function EmptySlot({ setDisplayMole, removePoint }) {
 
     useEffect(() => {
         let random = Math.ceil(Math.random()*5000)
@@ -11,7 +11,7 @@ function EmptySlot({ setDisplayMole }) {
 
     return (
         <div className='moleContainer'>
-            <img src='./images/molehill.png' alt="molehill" />
+            <img onClick={removePoint} className="moleImage" src='./images/molehill.png' alt="molehill" />
         </div>
     )
 }

@@ -17,7 +17,34 @@ header {
   overflow-y: auto;
 }
 
+.splash {
+  height: 60%;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  animation: 0.35s flashImage alternate infinite;
+}
+
+.scoreboard h3 {
+  display: inline;
+}
+
+button {
+  margin: 0 0.5rem;
+  background-color: #fff;
+  color: #014307;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+}
+
+button:hover {
+  background-color: #926100;
+  color: #fff;
+}
+
 .moles {
+  position: relative;
   width: 100vw;
   height: 90vh;
   text-align: center;
@@ -31,6 +58,15 @@ header {
   text-align: center;
 }
 
-img {
+.moleImage {
   height: 95%;
+}
+
+.paused {
+  color: red;
+}
+
+@keyframes flashImage {
+  from {transform: translate(-50%,-50%) scale(1);}
+  to {transform: translate(-50%,-50%) scale(1.2);}
 }

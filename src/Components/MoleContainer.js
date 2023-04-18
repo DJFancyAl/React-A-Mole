@@ -5,12 +5,18 @@ import EmptySlot from './EmptySlot'
 function MoleContainer({ score, setScore }) {
     let [displayMole, setDisplayMole] = useState(false)
 
-    const handleClick = () => {
-        setScore(prevScore => prevScore +1 )
+    const addPoint = () => {
+        setScore(prevScore => prevScore + 1 )
         setDisplayMole(false)
     }
 
-    let moleDisplay = displayMole ? <Mole setDisplayMole={setDisplayMole} handleClick={handleClick} /> : <EmptySlot setDisplayMole={setDisplayMole} />
+    const removePoint = () => {
+        if(score > 0){
+            setScore(prevScore => prevScore - 1 )
+        }
+    }
+
+    let moleDisplay = displayMole ? <Mole setDisplayMole={setDisplayMole} addPoint={addPoint} /> : <EmptySlot setDisplayMole={setDisplayMole} removePoint={removePoint}/>
 
     return (
         <>
